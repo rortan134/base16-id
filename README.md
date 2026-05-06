@@ -2,7 +2,7 @@
 
 > Turn hexadecimal keys into human-readable IDs and back.
 
-`base16-id` converts opaque hex strings (like `1a2b3c`) into readale identifiers such as `equal-squat-5052`. Ideal for exposing internal IDs to end users in URLs, support tickets, pairing codes, or anywhere readability matters.
+`base16-id` converts opaque hex strings (like `1a2b3c`) into readable identifiers such as `equal-squat-5052`. Ideal for exposing internal IDs to end users in URLs, support tickets, pairing codes, or anywhere readability matters.
 
 - **Tiny** — zero runtime dependencies
 - **Bijective** — lossless round-trip conversion
