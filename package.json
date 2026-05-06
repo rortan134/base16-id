@@ -1,0 +1,32 @@
+{
+    "name": "base16-id",
+    "version": "1.0.0",
+    "type": "module",
+    "description": "Tiny",
+    "sideEffects": false,
+    "license": "MIT",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsdown",
+        "type-check": "tsc --noEmit"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rortan134/base16-id.git"
+    },
+    "bugs": {
+        "url": "https://github.com/rortan134/base16-id/issues"
+    },
+    "homepage": "https://github.com/rortan134/base16-id#readme",
+    "engines": {
+        "node": ">=20"
+    },
+    "devDependencies": {
+        "@types/node": "^25.6.0",
+        "tsdown": "^0.21.10",
+        "typescript": "^6.0.3"
+    },
+    "packageManager": "pnpm@11.0.6"
+}
