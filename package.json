@@ -8,7 +8,20 @@
     "files": [
         "dist"
     ],
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            },
+            "default": "./dist/index.js"
+        }
+    },
     "scripts": {
+        "test": "pnpm run test:nodejs && pnpm run test:edge",
+        "test:nodejs": "jest --env node",
+        "test:edge": "jest --env @edge-runtime/jest-environment --no-coverage",
         "build": "tsdown",
         "type-check": "tsc --noEmit"
     },
