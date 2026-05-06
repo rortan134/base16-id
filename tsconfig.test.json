@@ -1,0 +1,9 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "moduleResolution": "bundler",
+        // TS5107: ts-jest 29.x forces moduleResolution=node10 under the hood
+        // when paired with TypeScript 6. Remove this once ts-jest is updated.
+        "ignoreDeprecations": "6.0"
+    }
+}

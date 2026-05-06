@@ -2,7 +2,7 @@
 
 > Turn hexadecimal keys into human-readable IDs and back.
 
-`base16-id` converts opaque hex strings (like `1a2b3c`) into readable identifiers such as `equal-squat-5052`. Ideal for exposing internal IDs to end users in URLs, support tickets, pairing codes, or anywhere readability matters.
+`base16-id` converts opaque hex strings (like `1a2b3c`) into readable identifiers such as `equal-torch-5004`. Ideal for exposing internal IDs to end users in URLs, support tickets, pairing codes, or anywhere readability matters.
 
 - **Tiny** — zero runtime dependencies
 - **Bijective** — lossless round-trip conversion
@@ -31,7 +31,7 @@ import { fromKey, toKey } from "base16-id";
 
 // Convert a hex key to a human-readable ID
 const id = fromKey("1a2b3c");
-console.log(id); // "equal-squat-5052"
+console.log(id); // "equal-torch-5004"
 
 // Convert back to the original hex key
 const key = toKey(id);
@@ -48,7 +48,7 @@ Convert a hexadecimal key into a human-readable ID (HRUID).
 
 | Name | Type | Description |
 |------|------|-------------|
-| `key` | `string` | A hexadecimal string. Must parse to an integer ≤ `29,043,752,400` (1010 × 2876 × 9999). |
+| `key` | `string` | A hexadecimal string. Must parse to an integer ≤ `29,047,599,999` (1010 × 2876 × 10000 − 1). |
 
 **Returns** `string` — an ID in the form `adjective-noun-NNNN`.
 
@@ -57,8 +57,8 @@ Convert a hexadecimal key into a human-readable ID (HRUID).
 **Example**
 
 ```ts
-fromKey("ff");       // "equal-squat-255"
-fromKey("deadbeef"); // "vapid-sniff-9199"
+fromKey("ff");       // "equal-squat-0255"
+fromKey("deadbeef"); // "gruff-clip-8559"
 ```
 
 ### `toKey(hruid: string): string`
@@ -76,7 +76,7 @@ Convert a human-readable ID back into its original hexadecimal key.
 **Example**
 
 ```ts
-toKey("equal-squat-5052"); // "1a2b3c"
+toKey("equal-torch-5004"); // "1a2b3c"
 ```
 
 ## How it works
@@ -87,6 +87,6 @@ Each ID is composed of three parts:
 2. **Noun** — chosen from a list of 2,876 words
 3. **Number** — a zero-padded 4-digit value from `0000` to `9999`
 
-This gives a total addressable space of **~29 billion** unique IDs (`1010 × 2876 × 9999`).
+This gives a total addressable space of **~29 billion** unique IDs (`1010 × 2876 × 10000`).
 
 The conversion is a simple positional encoding: the numeric value of the hex key is decomposed into an adjective index, a noun index, and a remaining 4-digit suffix. Because the mapping is deterministic and bijective, every valid hex key maps to exactly one HRUID and vice versa.
